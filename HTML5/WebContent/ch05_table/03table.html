@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 만들기 3[정렬]</title>
+
+<style type="text/css">
+
+	table, th, td {
+		border: solid 1px #fcb558;
+		border-collapse: collapse;
+	}
+
+	th {
+		background-color: #ccc;
+		width: 200px;
+		height: 30px;
+	}
+	
+	td.mycenter {
+		text-align: center;	/* text-align은 가로기준으로 정렬한다. left / right / center */
+	}
+	
+	td.myright {
+		text-align: right;
+	}
+	
+	tr#jumper {
+		height: 100px;
+	}
+	
+	td.mybottom {
+		vertical-align: bottom; /* vertical-align 세로정렬  top/middle/bottom*/
+	}
+	
+	td.mymiddle {
+		vertical-align: middle;
+	}
+	
+	td.mytop {
+		vertical-align: top;
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>제품이름과 설명</th>
+				<th>개당 가격</th>
+				<th>박스당 개수</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td class="mycenter">블라우스 - 붉은색 실크</td>
+				<td class="myright">20,000원</td>
+				<td class="mycenter">150</td>
+			</tr>
+			
+			<tr>
+				<td class="mycenter">바지 - 검은색 원단</td>
+				<td class="myright">4,000원</td>
+				<td class="mycenter">300</td>
+			</tr>
+			
+			<tr id="jumper">
+				<td class="mycenter mybottom">점퍼</td>
+				<td class="myright mymiddle">5,000원</td>
+				<td class="mycenter mytop">500</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+</body>
+</html>

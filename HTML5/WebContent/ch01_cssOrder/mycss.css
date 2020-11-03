@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+div {
+	border: solid 3px navy !important; 
+	/* border: 테두리: 실선 선두께(3px) 색(진한청색) 강제최우선실행명령*/
+}

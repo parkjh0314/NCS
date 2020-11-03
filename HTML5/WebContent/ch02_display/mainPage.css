@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	/* 
+		font-family: 글꼴
+		font-family: A, B, C;
+		A 글꼴이 최우선, A 글꼴이 없으면 B글꼴, B글꼴도 없으면 C글꼴을 적용
+	*/
+	
+	border: solid 1px gray;
+	
+	/* ====== 여백 설정 ====== */
+	
+	/* ==== margin : 바깥 여백이다. ==== */
+	
+	/* 상 우 하 좌 (시계방향순서) */
+	/* margin: 100px 100px 50px 20px;	 -- 상우좌하 각각 바깥여백을 정해준것 */
+	/* margin: 100px;				     -- 상우하좌 전체바깥여백을 100px씩 준것*/
+	/* margin: 100px 50px; 				 -- 상,하는 바깥여백을 100px 주고 우,좌는 여백을 50px 준것*/
+	margin: 0; 							/* 상우하좌 모두 바깥여백을 주지 않음 */
+	
+	
+	/* === padding : 안쪽여백 ==== */
+	
+	/* 상 우 하 좌 (시계방향순서) */
+	/* padding: 500px 10px 10px 20px;	 -- 상우좌하 각각 안쪽여백을 정해준것 */
+	/* padding: 50px;					 -- 상우하좌 모두 안쪽여백을 50px씩준것*/
+	/* padding: 100px 50px;				 -- 상,하는 안쪽여백을 100px 주고 우,좌는 안쪽여백을 50px 준것*/
+	padding: 0px;						 /* 상우하좌 모두 안쪽여백을 주지 않음 */
+}
+
+div#container {
+	border: solid 2px navy;
+	width: 80%;
+	margin: 20px auto; /* 상하 20px 좌우 auto로 가운데에 오도록함*/ 
+	/* auto를 주면 딱 가운데에 온다.*/
+}
+
+div#header {
+	border: solid 0px red;
+	height: 100px;
+	background-color: #ccc; /* #ccc는 #cccccc 이다. */
+	margin-top: 50px /* margin: 200px 0 0 0;와 같은 것, 상단바깥쪽만 여백을 줌 */
+}
+
+div#side {
+	width: 30%;
+	background-color: #888;
+}
+
+div#contents {
+	width: 69.44%;
+	background-color: #eee;
+}
+
+.customDisplay {
+	display: inline-block; /*옆으로 가되 width와 height를 줘야함*/
+	height: 500px;
+}
+
+div#footer {
+	height: 80px;
+	background-color: #ddd;
+}

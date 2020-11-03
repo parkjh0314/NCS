@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form에 대해서 알아보자.-2</title>
+
+<style type = "text/css">
+
+	body {
+		/* border: solid 1px gray; */
+		margin: 0;
+		padding: 0;
+		font-family: Arial, "MS Trebuchet", sans-serif;
+		word-break: break-all; /* 공백없이 영어만 쓰일경우 블럭을 넘어가지 않도록 설정해주는 것 */
+	}
+
+	#container {
+		/* border: soild 1px blue; */
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	legend {
+		font-size: 20pt;
+	}
+
+	ul {
+		/* border: solid 1px red; */
+		list-style-type: none;
+		padding: 0;
+	}
+
+	ul > li {
+		line-height: 40px;
+	}
+	
+	label.title {
+	/* border: solid 1px blue; */
+	display: inline-block;
+	width: 100px;
+	color: navy;
+	font-weight: bold;
+	}
+
+	/* input.  태그 속성 명시를 해줌(안해도 됨) */
+	input.myinput {
+		height: 20px;
+	}
+
+	select {
+		width: 150px;
+	}
+	
+	select.myselect {
+		height: 25px;
+	}
+	
+	input.btn {
+		width: 100px;
+		height: 40px;
+		background-color: #000; /* #000은 검정색 */
+		color: #fff; /* 흰색 */
+		font-size: 16pt;
+		border: none;
+		margin: 20px 0 0 40px;
+	}
+
+</style>
+
+</head>
+<body>
+	<div id= "container">
+	
+		<form action="register.do">
+		<fieldset>
+			<legend>회원가입정보</legend>
+			<!-- 태그에 name을 줘야만 데이터가 DB로 넘어갈수있다. name="컬럼명" 컬럼명과다르면X -->
+			<ul>
+				<li>
+					<label for="userid" class="title">아이디</label>
+					<input type = "text" name="userid" id="userid" class="myinput" size="20" maxlength="20" autofocus required/>
+				</li>
+				<li>
+					<label for="passwd1" class="title">암호</label>
+					<input type="password" name="passwd" id="passwd1" class="myinput" size="20" maxlength="20" required/>
+				</li>
+				<li>
+					<label for="passwd2" class="title">암호확인</label>
+					<input type="password" id="passwd2" class="myinput" size="20" maxlength="20" required/>
+				</li>
+				<li>
+					<label for="name" class="title">성명</label>
+					<input type="text" name="name" id="name" class="myinput" size="20" maxlength="20" required/>
+				</li>
+				<li>
+					<label for="email" class="title">이메일</label>
+					<input type="email" name="email" id="email" class="myinput" size="20" maxlength="40" required placeholder="예: hongk@gmail.com"/>
+				</li>
+				<li>
+					<label class="title">성별</label>
+					<label for="male">남자</label>
+					<input type="radio" name="gender" id="male" value="1" checked />	
+					<label for="female">여자</label>
+					<input type="radio" name="gender" id="female" value="2" />
+					<!-- 라디오 버튼의 name이 일치해야 버튼 중 하나만 선택이 된다.
+						 checked: 기본으로 선택되어있을 버튼에 입력해주면 됨. 없으면 기본선택안돼있음
+						 value: 해당 버튼 선택시 데이터베이스에 들어갈 값 -->
+				</li>
+				<li>
+					<label class="title">취미</label>
+					<label for="hobby1">게임</label><input type="checkbox" name="hobby" id="hobby1" value="1" />&nbsp;&nbsp;
+					<label for="hobby2">영화감상</label><input type="checkbox" name="hobby" id="hobby2" value="2" />&nbsp;&nbsp;
+					<label for="hobby3">글쓰기</label><input type="checkbox" name="hobby" id="hobby3" value="3" />&nbsp;&nbsp;
+					<label for="hobby4">음악감상</label><input type="checkbox" name="hobby" id="hobby4" value="4" />
+					<!-- 여러개를 선택했을 시 DB에 여러값이 중복으로 넘어갈 수 없으므로 배열로 넘겨줘야함.
+						 배열로 넘겨주기 위해서 name을 동일하게 줘야함. -->
+				</li>
+				<li>
+					<label class="title">최종학력</label>
+					<select class="myselect" name="school">
+						<option value="1">고졸</option>
+						<option value="2" selected>초대졸</option> <!-- selected를 준 값이 디폴드값으로 잡힘. -->
+						<option value="3">대졸</option>
+						<option value="4">대학원졸</option>
+						<!-- value값 없으면 입력돼있는 글자 데이터가 DB로 넘어감 -->
+					</select>
+				</li>
+				<li>
+					<label class="title">선호음식</label>
+					<select size="3" multiple name="food"> <!-- size: 화면에 보여줄 개수, multiple 다중선택 -->
+						<option>짜장면</option>
+						<option>파스타</option>
+						<option>팟타이</option>
+						<option>부대찌개</option>
+						<option>떡볶이</option>
+						<option>치킨</option>
+						<option>피자</option>
+					</select>
+				</li>
+				<li>
+					<label class="title">선호프로그램</label>
+					<select name="program" class="myselect">
+						<optgroup label="데이터베이스">	<!-- optgrouup: 옵션을 그룹으로 묶어줌 -->
+							<option>Oracle</option>
+							<option>MSSQL</option>
+							<option>SyBase</option>
+						</optgroup>
+						
+						<optgroup label="개발언어">
+							<option>Java</option>
+							<option>JSP</option>
+							<option>Spring</option>
+							<option>C/C++</option>
+						</optgroup>
+					</select>
+				</li>
+				<li>
+					<label for="browsername" class="title">웹브라우저</label>
+					<input list="browserType" id="browsername" name="browserType"/>
+					<datalist id="browserType">
+						<option value="Chrome"/>
+						<option value="Internet Explore"/>
+						<option value="Firefox"/>
+						<option value="Opera"/>
+						<option value="Safari"/>
+					</datalist>
+				</li>
+				<li>
+					<label for="addFile" class="title">파일첨부</label>
+					<input type="file" name="addFile" id="addFile"/>
+				</li>
+				<li>
+					<label for="registerComment" class="title">가입인사말</label>
+					<textarea rows="5" cols="30" id="registerComment" name="registerComment"></textarea> <!-- row:줄수 cols:한줄의길이(x글자) -->
+				</li>
+				
+				<li>
+					<input type="submit" class="btn" value="확인">
+					<input type="reset" class="btn" value="취소">
+				</li>
+			</ul>
+			
+		</fieldset>
+		</form>
+	
+	</div>
+
+
+</body>
+</html>

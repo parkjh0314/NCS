@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지를 둥글게 보여지도록 하기</title>
+
+<style type="text/css">
+
+body > div > table > tbody > tr > td > img {
+	/* border: solid 1px green; */
+	/* border-radius 는 테두리를 둥글게 만드는 속성입니다. */
+	/* border-radius: border-radius: top-left-x top-right-x bottom-right-x bottom-left-x / top-left-y top-right-y bottom-right-y bottom-left-y */
+	/* border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px 은 border-radius: 10px과 동일*/ 
+	/* border-radius: 20px; */
+	border-radius: 50%; /* 절반씩 깎음 */
+}
+
+
+</style>
+
+</head>
+<body>
+
+	<div id="container">
+		<table>
+			<thead>
+				<tr>
+					<th>아이유</th>
+					<th>김태희</th>
+					<th>박보영</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img alt="" src="images/iu.jpg"/></td>
+					<td><img alt="" src="images/kimth.jpg"></td>
+					<td><img alt="" src="images/parkby.jpg"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 만들기4[colgroup 태그]</title>
+
+<style type="text/css">
+
+	table, th, td {
+		border: solid 1px #fcb558;
+		border-collapse: collapse;
+	}
+
+	th {
+		background-color: #ccc;
+		width: 200px;
+		height: 30px;
+	}
+	
+	td.mycenter {
+		text-align: center;
+	}
+	
+	td.myright {
+		text-align: right;
+	}
+	
+	colgroup#firstColgroup {
+		background-color: #ffffb3;
+	}
+	
+	colgroup#secondColgroup {
+		background-color: #ffcccc;
+	}
+</style>
+
+</head>
+<body>
+
+	<table>
+		<colgroup span="1" id="firstColgroup">	
+		<!-- colgroup은 col 단축명령어로 사용가능, 
+			 span="숫자": 이때 숫자는 묶어줄 행의 개수를 의미
+			 span="1" : 첫번째행을 그룹으로 묶겠다는 의미(처음span사용) -->
+		<colgroup span="2" id="secondColgroup">
+		<!-- span="2": 먼저 그룹으로 묶인 행의 다음부터 두 행을 그룹으로 묶음(2,3행) -->
+		<thead>
+			<tr>
+				<th>제품이름과 설명</th>
+				<th>개당 가격</th>
+				<th>박스당 개수</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td class="mycenter">블라우스 - 붉은색 실크</td>
+				<td class="myright">20,000원</td>
+				<td class="mycenter">150</td>
+			</tr>
+			
+			<tr>
+				<td class="mycenter">바지 - 검은색 원단</td>
+				<td class="myright">4,000원</td>
+				<td class="mycenter">300</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+</body>
+</html>

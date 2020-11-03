@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display에 대해서 알아본다. CSS를 임베디드로 나타내어본다.</title>
+
+<style type="text/css">
+
+	div#div1 {
+	border : solid 2px green;
+	width : 100px;
+	height : 300px;
+	}
+	
+	div#div2 { /* #앞에 div를 빼도 괜찮다. 현재 id를 div2로 가지고 있는 태그는 div밖에 없기떄문 */	
+	border : solid 5px #b30086; /* 적포도주색 */
+	width : 50%;	/* 웹브라우저 가로길이의 50% -> 창크기에따라 유동적 */
+	height : 500px;
+	}
+
+ /*
+	#div2 {						-- #앞에 idv를 빼도 괜찮음
+	border : solid 5px #b30086;
+	width : 50%;
+	height : 500px;
+	}
+
+ */
+
+	.foodName { /*class사용은 .클래스명*/
+		display: block;
+		border: solid 4px yellow;
+	}
+
+	/*
+		=== CCS 우선순위 ===
+		
+		아이디(#) > 클래스(.) > 태그
+		
+		동일한 태그 또는 동일한 클래스 또는 동일한 아이디에서는 
+		맨마지막에 기술된 CSS내용이 더 우선한다.(즉, 덮어씌운다.)
+	
+	*/
+	#myid {
+		font-weight: bold; /* 폰트굵기 */
+		color: red; /* 글자색 */
+	}
+	
+	.myclass {
+		background-color: #4dffa6; 	     /* 배경색 */
+		color: blue;					 /* 글자색 */
+		font-size: 24pt;				 /* 글자크기 */
+		background-color: #ffffcc;		 /* 배경색 --> 위에 배경색줬더라도 맨 마지막게 적용됨 */
+		
+	}
+
+</style>
+
+</head>
+<body>
+
+	<h1>▷bolock 방식 - 세로로 떨어지는 방식◁</h1>
+
+	<h1>h1 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h1>
+	<h2>h2 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h2>
+	<h3>h3 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h3>
+	<h4>h4 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h4>
+	<h5>h5 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h5>
+	<h6>h6 display의 기본값은 block 방식[세로로 떨어지는 방식]이다.</h6>
+
+	<br> <!-- 줄바꿈 -->
+		
+	<div>div는 display가 bolck 방식이다.</div>
+	<div>div는 display가 bolck 방식이다.</div>
+
+	<hr> <!-- 수평선  -->
+
+	<h2>▷inline 방식 - 가로로 표현되는 방식◁</h2>
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net">다음</a>
+	<a href="http://www.nate.com">네이트</a>
+
+	<br> <!-- 줄바꿈 -->
+
+	<label>레이블1 label 태그는 display가 inline 방식이다.</label>
+	<label>레이블2 label 태그는 display가 inline 방식이다.</label>
+	<label>레이블3 label 태그는 display가 inline 방식이다.</label>
+	
+	<br/> <!-- 줄바꿈 /는 빼도 안빼도 상관x --> 
+
+	<span>span1 span태그는 display가 inline 방식이다.</span>
+	<span>span2 span태그는 display가 inline 방식이다.</span>
+	<span>span3 span태그는 display가 inline 방식이다.</span>
+	
+	<hr>
+
+	<!-- block에서는 테두리의 크기 조정이 가능하다 -->
+   <!-- block에서 width는 %가 가능하지만 height는 불가능하다. -->
+   <div id="div1">DIV 1 블럭요소(block element)은 width 및 height 가 적용된다.</div> <!-- id를 사용해 임베디드에서 설정가능 -->
+   <div id="div2">DIV 2 블럭요소(block element)은 width 및 height 가 적용된다.</div>
+   
+   <br/><br/>
+   
+   <!-- inline에서는 테두리의 크기 조정이 불가능하다 => 내용물에 맞게 크기가 지정되기 때문 -->
+   <span style="border: solid 1px red; width: 150px; height: 150px;">span1 인라인(inline element)는 width 및 height가 적용이 안된다.</span>
+   <span style="border: solid 1px red; width: 200px; height: 150px;">span2 인라인(inline element)는 width 및 height가 적용이 안된다.</span>
+   <span style="border: solid 1px red; width: 250px; height: 150px;">span3 인라인(inline element)는 width 및 height가 적용이 안된다.</span>
+   
+   <br/><br/>
+   <hr/>
+   
+      
+   <!-- inline(width, height 지정 불가) -->
+   <span style="border: solid 1px green; width: 150px; height: 100px;">짜장면1</span>
+   <span style="border: solid 1px green; width: 200px; height: 150px;">탕수육1</span>
+   <span style="border: solid 1px green; width: 250px; height: 200px;">팔보채1</span>
+   
+   <br/><br/>
+   
+   <!-- block(태그는 span[inline]이지만 style로 block으로 지정해줌) -->
+   <span class="foodName" id="div2" >짜장면2</span> <!-- calss: 태그 여러개를 동시에 잡을때사용 id: 태그 하나를 잡을 때 사용 -->
+   <span class="foodName">탕수육2</span>
+   <span class="foodName">팔보채2</span>
+   
+   <br/><br/>
+   
+   <!-- inline-block -->
+   <!-- 기본구성은 inline이지만 width와 height를 지정해줄 수 있다. -->
+   <span style="display: inline-block; border: solid 1px red; width: 150px; height: 100px;">짜장면3</span>
+   <span style="display: inline-block; border: solid 1px red; width: 200px; height: 150px;">탕수육3</span>
+   <span style="display: inline-block; border: solid 1px red; width: 250px; height: 200px;">팔보채3</span>
+   
+         
+   
+   <div id="myid" class="myclass">CSS 우선순위에 대해서 알아봅시다</div>
+   	<!-- class에서 준 style값보다 id에서 준 style값이 우선시되어 적용. -->
+	
+	
+	
+	
+</body>
+</html>
